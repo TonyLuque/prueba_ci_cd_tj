@@ -11,12 +11,23 @@ node_js:
 git:
     depth: 3
 
+#script:
+    #- yarn build # Ejecuta el script de compilacion por ejemplo para webpack
+
+notifications:
+    email:
+        recipients:
+            - kasuru@hotmail.com
+            - julita_056@hotmail.com
+        on_success: always
+        on_failure: always
+
 deploy:
     provider: pages
     skip-cleanup: true
     keep-history: true
     github-token: $GITHUB_TOKEN
-    local-dir: ./
+    local-dir: ./ #Dir del archivo en el que sta el proyecto Ej: public
     target-branch: gh-pages
     commit_message: "Deploy del proyecto"
     on:
